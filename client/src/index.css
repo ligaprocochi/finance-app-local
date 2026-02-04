@@ -1,0 +1,113 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  * {
+    @apply border-ui-border;
+  }
+  
+  body {
+    @apply bg-background-primary text-text-primary font-sans antialiased;
+  }
+  
+  /* Custom scrollbar for dark mode */
+  ::-webkit-scrollbar {
+    @apply w-2;
+  }
+  
+  ::-webkit-scrollbar-track {
+    @apply bg-background-secondary;
+  }
+  
+  ::-webkit-scrollbar-thumb {
+    @apply bg-text-muted rounded-full;
+  }
+  
+  ::-webkit-scrollbar-thumb:hover {
+    @apply bg-text-secondary;
+  }
+}
+
+@layer components {
+  /* Card base styles */
+  .card {
+    @apply bg-background-card rounded-card p-6 border border-ui-border shadow-card;
+    @apply transition-all duration-200 ease-in-out;
+  }
+  
+  .card:hover {
+    @apply bg-background-card/80 -translate-y-0.5 shadow-card-hover;
+  }
+  
+  /* Button styles */
+  .btn {
+    @apply px-6 py-3 rounded-lg font-semibold transition-all duration-200;
+    @apply focus:outline-none focus:ring-2 focus:ring-offset-2;
+  }
+  
+  .btn-primary {
+    @apply bg-accent-lime text-background-primary;
+    @apply hover:bg-accent-limeHover hover:-translate-y-0.5 hover:shadow-lime;
+  }
+  
+  .btn-secondary {
+    @apply bg-white/5 text-text-primary border border-white/10;
+    @apply hover:bg-white/10 hover:border-white/20;
+  }
+  
+  .btn-icon {
+    @apply w-10 h-10 flex items-center justify-center rounded-lg;
+    @apply bg-white/5 hover:bg-white/10 transition-colors;
+  }
+  
+  /* Input styles */
+  .input {
+    @apply bg-background-card border border-ui-border rounded-lg;
+    @apply px-4 py-3 text-text-primary placeholder-text-muted;
+    @apply focus:outline-none focus:border-accent-lime focus:ring-1 focus:ring-accent-lime/20;
+    @apply transition-all duration-200;
+  }
+  
+  /* Badge styles */
+  .badge {
+    @apply inline-flex items-center gap-1 px-3 py-1 rounded-full;
+    @apply text-xs font-semibold;
+  }
+  
+  .badge-positive {
+    @apply bg-status-positive/15 text-status-positive;
+  }
+  
+  .badge-negative {
+    @apply bg-status-negative/15 text-status-negative;
+  }
+  
+  .badge-neutral {
+    @apply bg-status-neutral/15 text-status-neutral;
+  }
+  
+  .badge-lime {
+    @apply bg-accent-limeMuted text-accent-lime;
+  }
+}
+
+@layer utilities {
+  /* Financial value styling */
+  .value-financial {
+    @apply font-mono text-financial font-semibold;
+  }
+  
+  .value-large {
+    @apply font-mono text-display font-bold;
+  }
+  
+  /* Animation utilities */
+  .animate-in {
+    @apply animate-fade-in;
+  }
+  
+  .animate-up {
+    @apply animate-slide-up;
+  }
+}
